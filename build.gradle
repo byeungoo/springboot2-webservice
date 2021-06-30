@@ -1,10 +1,10 @@
 buildscript {
-    ext {
-        springBootVersion = '2.1.9.RELEASE'
+    ext {        //ext : build.gradle에서 사용하는 전역변수 설정
+        springBootVersion = '2.1.9.RELEASE'      //springBootVersion 전역변수 설정
     }
     repositories {
-        mavenCentral()
-        jcenter()
+        mavenCentral()      //본인이 만든 라이브러리를 업로드하는게 어려움
+        jcenter()           //본인이 만든 라이브러리를 업로드하고, mavenCenteral에도 업로드 될 수 있도록 자동화 할 수 있음
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -14,7 +14,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+apply plugin: 'io.spring.dependency-management'     // 스프링 부트의 의존성들을 관리해 주는 플러그인. 꼭 추가하기
 
 group 'com.hoon'
 version '1.0-SNAPSHOT'
@@ -25,9 +25,12 @@ repositories {
     jcenter()
 }
 
+//특정 버전을 명시하지는 말기. SpirngBootVersion의 버전을 따라감.
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('com.h2database:h2')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
