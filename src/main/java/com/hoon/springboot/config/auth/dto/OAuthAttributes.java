@@ -24,6 +24,13 @@ public class OAuthAttributes {
         this.picture = picture;
     }
 
+    /**
+     * OAuth2User에서 반환하는 사용자 정보는 Map이기 때문에 값 하나하나를 변환해줘야한다.
+     * @param registrationId
+     * @param userNameAttributeName
+     * @param attributes
+     * @return
+     */
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
         if("naver".equals(registrationId)) {
             return ofNaver("id", attributes);
