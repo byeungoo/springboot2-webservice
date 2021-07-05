@@ -2,3 +2,4 @@
 .idea
 
 application-oauth.properties
+application-readl-db.properties
