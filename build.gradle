@@ -17,7 +17,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'     // 스프링 부트의 의존성들을 관리해 주는 플러그인. 꼭 추가하기
 
 group 'com.hoon'
-version '1.0-SNAPSHOT'
+version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
 sourceCompatibility = "11"
 
 repositories {
