@@ -70,4 +70,5 @@ public class OAuthAttributes {
                 .role(Role.GUEST)
                 .build();
     }
+
 }
